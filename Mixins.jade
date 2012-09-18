@@ -1,0 +1,33 @@
+
+//- ASP.Net Control mixins
+mixin RegisterSrc(src, tagname, tagprefix)
+	<%@ Register Src='#{src}' TagName="#{tagname}" TagPrefix="#{tagprefix}" %>
+
+mixin aspButton(id, text)
+	asp:Button(runat='server',id='#{id}',text='#{text}')
+
+mixin aspLinkButton(id, text)
+	asp:LinkButton(runat='server',id='#{id}',text='#{text}')
+
+
+//- Kentico Control mixins
+mixin cmsRepeater(id, transformName, classname, path)
+	- path = path || '/%'
+	cms:CMSRepeater(runat='server',ID='#{id}',TransformationName='#{transformName}',Path='#{path}',ClassName='#{classname}')
+
+mixin cmsForm(id, formname, alternativeformname, formmode, showok)
+	cms:CMSForm(runat='server', ID='#{id}', FormName='#{formname}', AlternativeFormFullName='#{alternativeformname}', FormMode='#{formmode}', ShowOkButton='#{showok}')
+
+mixin cmsLocalizedLabel(id, resString, cssclass)
+	- cssclass = cssclass || 'LocalizedLabel'
+	cms:LocalizedLabel(runat='server', id='#{id}', ResourceString='#{resString}', CssClass='#{cssclass}')
+
+//- Preview
+mixin aspButton('bttnTest',"ButtonTest")
+mixin aspLinkButton('bttnTest',"ButtonTest") 
+mixin cmsRepeater('rptr', "custom.Test", "CMS.News","/News/%")
+mixin cmsRepeater('rptr', "custom.Test", "CMS.News")
+mixin cmsForm('form','CMS.Test', 'CMS.Test.Atl','Update', 'True')
+mixin RegisterSrc('~/test.ascx','tagname','tag')
+mixin cmsLocalizedLabel('id', 'resString')
+mixin cmsLocalizedLabel('id', 'resString', 'testclass')
