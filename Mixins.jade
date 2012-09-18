@@ -12,7 +12,11 @@ mixin aspLinkButton(id, text)
 mixin aspHyperLink(id, text, navurl)
 	asp:HyperLink(runat='server',id='#{id}', Text='#{text}', NavigateUrl='#{navurl}')
 
-
+mixin aspUpdatePanel(id, updatemode, htmlContent)
+	asp:UpdatePanel(runat='server', id='#{id}', UpdateMode ='#{updatemode}')
+		asp:ContentTemplate
+		|	!{htmlContent}
+			
 //- Kentico Control mixins
 mixin cmsRepeater(id, transformName, classname, path)
 	- path = path || '/%'
@@ -35,3 +39,4 @@ mixin cmsForm('form','CMS.Test', 'CMS.Test.Atl','Update', 'True')
 mixin RegisterSrc('~/test.ascx','tagname','tag')
 mixin cmsLocalizedLabel('id', 'resString')
 mixin cmsLocalizedLabel('id', 'resString', 'testclass')
+mixin aspUpdatePanel('test','test','content<br /> test')
