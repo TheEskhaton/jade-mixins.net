@@ -9,4 +9,4 @@ jade-mixins.net
 >
 > Open the **Mixin.jade** file in your text editor and write your markup instead of the examples
 >
-> Run `jade < Mixin.jade > FileName.aspx` or `jade < Mixin.jade > FileName.ascx` from bash/command line to translate your jade markup into Asp.NET html
+> Run `jade < Mixin.jade > FileName.aspx` or `jade < Mixin.jade > FileName.ascx` from bash/command line to translate your jade markup into ASP.Net markup
