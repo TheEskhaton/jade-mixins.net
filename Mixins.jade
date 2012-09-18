@@ -9,6 +9,9 @@ mixin aspButton(id, text)
 mixin aspLinkButton(id, text)
 	asp:LinkButton(runat='server',id='#{id}',text='#{text}')
 
+mixin aspHyperLink(id, text, navurl)
+	asp:HyperLink(runat='server',id='#{id}', Text='#{text}', NavigateUrl='#{navurl}')
+
 
 //- Kentico Control mixins
 mixin cmsRepeater(id, transformName, classname, path)
@@ -22,7 +25,8 @@ mixin cmsLocalizedLabel(id, resString, cssclass)
 	- cssclass = cssclass || 'LocalizedLabel'
 	cms:LocalizedLabel(runat='server', id='#{id}', ResourceString='#{resString}', CssClass='#{cssclass}')
 
-//- Preview
+
+//- Examples
 mixin aspButton('bttnTest',"ButtonTest")
 mixin aspLinkButton('bttnTest',"ButtonTest") 
 mixin cmsRepeater('rptr', "custom.Test", "CMS.News","/News/%")
